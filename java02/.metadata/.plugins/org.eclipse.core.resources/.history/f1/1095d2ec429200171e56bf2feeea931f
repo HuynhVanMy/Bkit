@@ -1,0 +1,48 @@
+package bai02;
+
+import java.util.Scanner;
+
+public class QuanLyCuaHangCDController {
+
+	public QuanLyCuaHangCD inputData() {
+		int maCD = (int) checkNumer("mã CD");
+		String chuDe = checkString("chủ đề CD");
+		String tenCaSy = checkString("tên ca sỹ");
+		int soBaiHat = (int) checkNumer("số bài hát");
+		double giaThanh = checkNumer("giá");
+		QuanLyCuaHangCD item = new QuanLyCuaHangCD(maCD, chuDeCD, tenCasy, soBaiHat, giaThanh);
+		return item;
+	}
+
+	public String checkString(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String str = "";
+		System.out.print("Nhập " + s + ": ");
+		str = sc.nextLine();
+		return str;
+	}
+
+	public double checkNumer(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		double n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập " + s + ": ");
+				n = Double.parseDouble(sc.nextLine());
+				check = false;
+				if (n < 0) {
+					System.out.println("Không đc nhỏ hơn 0 !!!");
+					check = true;
+				}
+			} catch (NumberFormatException e) {
+				System.out.println("Nhập bậy !!!");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+
+}

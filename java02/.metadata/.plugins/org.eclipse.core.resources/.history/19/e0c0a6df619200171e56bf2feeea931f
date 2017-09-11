@@ -1,0 +1,10 @@
+package bai03;
+
+public class QuanLyGiaoDichView {
+
+	public static void main(String[] args) {
+		QuanLyGiaoDichControlller controlller = new QuanLyGiaoDichControlller();
+
+	}
+	
+}

@@ -1,0 +1,35 @@
+package view;
+
+import java.util.ArrayList;
+
+import bean.SinhVien;
+import controller.SinhVienController;
+
+public class ShowData {
+
+	public static void main(String[] args) {
+		// SinhVien[] item = new SinhVien[2];
+		// SinhVienController ctrl = new SinhVienController();
+		// for (int i = 0; i < item.length; i++) {
+		// item[i] = ctrl.inputData();
+		// }
+		// ctrl.output02();
+		// for (int i = 0; i < item.length; i++) {
+		// ctrl.output(item[i]);
+		// }
+
+		SinhVienController ctrl = new SinhVienController();
+		int n = (int) ctrl.inputNumber("the number student");
+		ArrayList<SinhVien> arrS = new ArrayList<SinhVien>();
+		SinhVien item = new SinhVien();
+		for (int i = 0; i < n; i++) {
+			arrS.add(ctrl.inputData(item));
+		}
+		ctrl.output02();
+		for (SinhVien i : arrS) {
+			ctrl.output(i);
+		}
+
+	}
+
+}

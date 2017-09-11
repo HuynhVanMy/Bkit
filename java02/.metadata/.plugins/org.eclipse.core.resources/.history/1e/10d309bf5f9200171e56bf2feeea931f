@@ -1,0 +1,91 @@
+package bai03;
+
+public class QuanLyGiaoDich {
+
+	private String maGiaoDich;
+	private String ngayGiaoDich;
+	private double donGia;
+	private int soLuong;
+	private String loaiVang;
+	private double tiGia;
+	private String loaiTienTe;
+
+	public QuanLyGiaoDich() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public QuanLyGiaoDich(String maGiaoDich, String ngayGiaoDich, double donGia, int soLuong, String loaiVang) {
+		this.maGiaoDich = maGiaoDich;
+		this.ngayGiaoDich = ngayGiaoDich;
+		this.donGia = donGia;
+		this.soLuong = soLuong;
+		this.loaiVang = loaiVang;
+	}
+
+	public QuanLyGiaoDich(String maGiaoDich, String ngayGiaoDich, double donGia, int soLuong, double tiGia,
+			String loaiTienTe) {
+		this.maGiaoDich = maGiaoDich;
+		this.ngayGiaoDich = ngayGiaoDich;
+		this.donGia = donGia;
+		this.soLuong = soLuong;
+		this.tiGia = tiGia;
+		this.loaiTienTe = loaiTienTe;
+	}
+
+	public String getMaGiaoDich() {
+		return maGiaoDich;
+	}
+
+	public void setMaGiaoDich(String maGiaoDich) {
+		this.maGiaoDich = maGiaoDich;
+	}
+
+	public String getNgayGiaoDich() {
+		return ngayGiaoDich;
+	}
+
+	public void setNgayGiaoDich(String ngayGiaoDich) {
+		this.ngayGiaoDich = ngayGiaoDich;
+	}
+
+	public double getDonGia() {
+		return donGia;
+	}
+
+	public void setDonGia(double donGia) {
+		this.donGia = donGia;
+	}
+
+	public int getsoLuong() {
+		return soLuong;
+	}
+
+	public void setsoLuong(int soLuong) {
+		this.soLuong = soLuong;
+	}
+
+	public String getLoaiVang() {
+		return loaiVang;
+	}
+
+	public void setLoaiVang(String loaiVang) {
+		this.loaiVang = loaiVang;
+	}
+
+	public double getTiGia() {
+		return tiGia;
+	}
+
+	public void setTiGia(double tiGia) {
+		this.tiGia = tiGia;
+	}
+
+	public String getLoaiTienTe() {
+		return loaiTienTe;
+	}
+
+	public void setLoaiTienTe(String loaiTienTe) {
+		this.loaiTienTe = loaiTienTe;
+	}
+
+}

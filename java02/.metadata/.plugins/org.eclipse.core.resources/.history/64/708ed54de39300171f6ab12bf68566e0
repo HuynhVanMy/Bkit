@@ -1,0 +1,34 @@
+package bai05;
+
+public class MoTa<nuocBai, thuTu> {
+
+	private String nuocBai;
+	private String thuTu;
+
+	public MoTa() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public MoTa(String nuocBai, String thuTu) {
+		super();
+		this.nuocBai = nuocBai;
+		this.thuTu = thuTu;
+	}
+
+	public String getNuocBai() {
+		return nuocBai;
+	}
+
+	public void setNuocBai(String nuocBai) {
+		this.nuocBai = nuocBai;
+	}
+
+	public String getThuTu() {
+		return thuTu;
+	}
+
+	public void setThuTu(String thuTu) {
+		this.thuTu = thuTu;
+	}
+
+}

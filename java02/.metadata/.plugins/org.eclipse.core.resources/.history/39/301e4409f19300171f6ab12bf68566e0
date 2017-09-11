@@ -1,0 +1,54 @@
+package bai05;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class XaoBai {
+
+	public void output02(List<People> peopleList) {
+		for (People people : peopleList) {
+			System.out.println(people.toString());
+		}
+	}
+
+	public List<People> chiaBai(List<Card> alItem) {
+		List<People> peopleList = new ArrayList<>(3);
+		//List<Card> tmpItem = new ArrayList<>();
+		int count = 0;
+		do {
+			
+		} while (count < 4);
+		return peopleList;
+	}
+
+	public void xaoBai(List<Card> alItem) {
+		Collections.shuffle(alItem);
+	}
+
+	public void output(List<Card> alItem) {
+		int i = 0;
+		for (Card card : alItem) {
+			i++;
+			System.out.print(i + " " + card.toString() + " " + card.toString02() + "\t");
+			if (i == 13 || i == 26 || i == 39) {
+				System.out.println();
+			}
+		}
+	}
+
+	public List<Card> card() {
+		List<Card> alItem = new ArrayList<>();
+		int count = 0;
+		do {
+			Card item = new Card();
+			if (!alItem.contains(item)) {
+				alItem.add(item);
+				count++;
+			}
+		} while (count < 52);
+
+		return alItem;
+	}
+
+}

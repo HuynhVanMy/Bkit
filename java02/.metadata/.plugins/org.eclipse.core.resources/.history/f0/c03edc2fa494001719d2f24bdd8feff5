@@ -1,0 +1,123 @@
+package bai04;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
+
+public class TienDienController {
+	
+	
+
+	public List<TienDien> addSymbol(List<TienDien> listTienDien) {
+		for (TienDien tienDien : listTienDien) {
+			if (tienDien.getSoDienTieuThu() > 280) {
+				tienDien.setTenChuHo("!" + tienDien.getTenChuHo());
+			}
+		}
+		return listTienDien;
+	}
+
+	public List<TienDien> sortByName(List<TienDien> listTienDien) {
+		Collections.sort(listTienDien, new Comparator<TienDien>() {
+
+			@Override
+			public int compare(TienDien o1, TienDien o2) {
+				return o1.getTenChuHo().compareToIgnoreCase(o2.getTenChuHo());
+			}
+
+		});
+		return listTienDien;
+	}
+
+	public List<TienDien> add(List<TienDien> listTienDien) {
+		System.out.println("Nhập thông tin hóa đơn cần thêm vào:");
+		listTienDien.add(inputData());
+		return listTienDien;
+	}
+
+	public double tongChiPhi(List<TienDien> listTienDien) {
+		double tongChiPhi = 0;
+		for (TienDien tienDien : listTienDien) {
+			tongChiPhi += tienDien.getTongTien();
+		}
+		return tongChiPhi;
+	}
+
+	public void output(List<TienDien> listTienDien) {
+		for (TienDien tienDien : listTienDien) {
+			System.out.println(tienDien.toString());
+		}
+	}
+
+	public List<TienDien> listTienDien() {
+		List<TienDien> listTienDien = new ArrayList<>();
+		int n = inputInt("số lượng hóa đơn");
+		for (int i = 0; i < n; i++) {
+			System.out.println("HÓA ĐƠN " + (i + 1) + ":");
+			listTienDien.add(inputData());
+		}
+		return listTienDien;
+	}
+
+	public TienDien inputData() {
+		String diaChi = inputStr("địa chỉ chủ hộ");
+		String tenChuHo = inputStr("tên chủ hộ");
+		int soDienTieuThu = inputInt("số điện tiêu thụ");
+		double tongTien = tongTien(soDienTieuThu);
+		double thue = tongTien * 0.1;
+		tongTien += thue;
+
+		TienDien item = new TienDien(diaChi, tenChuHo, soDienTieuThu, thue, tongTien);
+		return item;
+	}
+
+	public double tongTien(int soDienTieuThu) {
+		double tongT = 0;
+		if (soDienTieuThu <= 100) {
+			tongT = soDienTieuThu * 500;
+		} else if (soDienTieuThu > 100 && soDienTieuThu <= 250) {
+			tongT = 100 * 500 * (soDienTieuThu - 100) * 800;
+		} else if (soDienTieuThu > 250 && soDienTieuThu <= 350) {
+			int a = 100;// 1-100
+			int b = soDienTieuThu - a;// 101-250
+			int c = soDienTieuThu - (a + b);// 251-350
+			tongT = a * 500 + b * 800 + c * 1000;
+		} else {
+			int a = 100;
+			int b = soDienTieuThu - a;
+			int c = soDienTieuThu - (a + b);
+			int d = soDienTieuThu - (a + b + c);
+			tongT = a * 100 + b * 800 + c * 1000 + d * 1500;
+		}
+		return tongT;
+	}
+
+	public String inputStr(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String str = "";
+		System.out.print("Nhập " + s + ": ");
+		str = sc.nextLine();
+		return str;
+	}
+
+	public static int inputInt(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập " + s + ": ");
+				n = Integer.parseInt(sc.nextLine());
+				check = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Nhập bậy");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+}

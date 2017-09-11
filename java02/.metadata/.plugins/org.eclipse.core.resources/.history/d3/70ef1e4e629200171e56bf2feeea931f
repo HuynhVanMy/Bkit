@@ -1,0 +1,90 @@
+package bai03;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+public class QuanLyGiaoDichControlller {
+
+	public void output(List<QuanLyGiaoDich> list) {
+		for (QuanLyGiaoDich item : list) {
+			if (item.getMaGiaoDich().contains("VANG")) {
+				System.out.println(item.toString());
+			} else {
+				System.out.println(item.toString02());
+			}
+		}
+	}
+
+	public List<QuanLyGiaoDich> listGiaoDich() {
+		List<QuanLyGiaoDich> list = new ArrayList<>();
+		int n = (int) checkNumer("số lượng giao dịch");
+		for (int i = 0; i < n; i++) {
+			System.out.println("Lựa chọn loại giao dịch:" + "\n1. Vàng" + "\t\t2. Tiền tệ");
+			switch ((int) checkNumer("lựa chọn")) {
+			case 1:
+				list.add(inputDataVang());
+				break;
+			case 2:
+				list.add(inputDataTien());
+				break;
+			default:
+				System.out.println("không có loại giao dịch này !!!");
+				break;
+			}
+		}
+		return list;
+	}
+
+	public QuanLyGiaoDich inputDataTien() {
+		String maGiaoDich = "VANG-" + (new Random().nextInt(8889) + 1000);
+		String ngayGiaoDich = checkString("ngày giao dịch(dd/MM/yyyy)");
+		double donGia = checkNumer("donGia");
+		int soLuong = (int) checkNumer("số lượng");
+		double tiGia = checkNumer("tỉ giá");
+		String loaiTienTe = checkString("loại tiền tệ");
+		QuanLyGiaoDich item = new QuanLyGiaoDich(maGiaoDich, ngayGiaoDich, donGia, soLuong, tiGia, loaiTienTe);
+		return item;
+	}
+
+	public QuanLyGiaoDich inputDataVang() {
+		String maGiaoDich = "TIEN-" + (new Random().nextInt(8889) + 1000);
+		String ngayGiaoDich = checkString("ngày giao dịch(dd/MM/yyyy)");
+		double donGia = checkNumer("donGia");
+		int soLuong = (int) checkNumer("số lượng");
+		String loaiVang = checkString("loại vàng");
+		QuanLyGiaoDich item = new QuanLyGiaoDich(maGiaoDich, ngayGiaoDich, donGia, soLuong, loaiVang);
+		return item;
+	}
+
+	// nhập chuỗi
+	public String checkString(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String str = "";
+		System.out.print("Nhập " + s + ": ");
+		str = sc.nextLine();
+		return str;
+	}
+
+	// kiểm tra kiểu số nhập vào
+	public double checkNumer(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		double n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập " + s + ": ");
+				n = Double.parseDouble(sc.nextLine());
+				check = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Nhập bậy !!!");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+
+}

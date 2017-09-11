@@ -1,0 +1,13 @@
+package bai05;
+
+public class Card {
+
+	private String loaiBai;
+	private String soThuTu;
+
+	public Card() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+}

@@ -1,0 +1,140 @@
+package bai03;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+public class QuanLyGiaoDichControlller {
+
+	public void output(List<QuanLyGiaoDich> list) {
+		for (QuanLyGiaoDich item : list) {
+			if (item.getMaGiaoDich().contains("VANG")) {
+				System.out.println(item.toString());
+			} else {
+				System.out.println(item.toString02());
+			}
+		}
+	}
+
+	public List<QuanLyGiaoDich> listGiaoDich() {
+		List<QuanLyGiaoDich> list = new ArrayList<>();
+		int n = (int) checkNumer("số lượng giao dịch");
+		for (int i = 0; i < n; i++) {
+			System.out.println("Lựa chọn loại giao dịch:" + "\n1. Vàng" + "\t\t2. Tiền tệ");
+			switch ((int) checkNumer("lựa chọn")) {
+			case 1:
+				list.add(inputDataVang());
+				break;
+			case 2:
+				list.add(inputDataTien());
+				break;
+			default:
+				System.out.println("không có loại giao dịch này !!!");
+				break;
+			}
+		}
+		return list;
+	}
+
+	public QuanLyGiaoDich inputDataTien() {
+		String maGiaoDich = "TIEN-" + (new Random().nextInt(8889) + 1000);
+		String ngayGiaoDich = checkString("ngày giao dịch(dd/MM/yyyy)");
+		double donGia = checkNumer("đơn giá");
+		int soLuong = (int) checkNumer("số lượng");
+		double tiGia = checkNumer("tỉ giá");
+		String loaiTienTe = loaiTienTe();
+		QuanLyGiaoDich item = new QuanLyGiaoDich(maGiaoDich, ngayGiaoDich, donGia, soLuong, tiGia, loaiTienTe);
+		return item;
+	}
+
+	public QuanLyGiaoDich inputDataVang() {
+		String maGiaoDich = "VANG-" + (new Random().nextInt(8889) + 1000);
+		String ngayGiaoDich = checkString("ngày giao dịch(dd/MM/yyyy)");
+		double donGia = checkNumer("đơn giá");
+		int soLuong = (int) checkNumer("số lượng");
+		String loaiVang = loaiVang();
+		QuanLyGiaoDich item = new QuanLyGiaoDich(maGiaoDich, ngayGiaoDich, donGia, soLuong, loaiVang);
+		return item;
+	}
+
+	public String loaiTienTe() {
+		String str = "";
+		boolean check = true;
+		do {
+			System.out.println("Chọn loại tiền:" + "\n1.VNĐ" + "\t2. USD" + "\t3. EUR");
+			switch ((int) checkNumer("lựa chọn")) {
+			case 1:
+				str = "VNĐ";
+				check = false;
+				break;
+			case 2:
+				str = "USD";
+				check = false;
+				break;
+			case 3:
+				str = "EUR";
+				check = false;
+				break;
+
+			default:
+				System.out.println("vui lòng chọn đúng loại tiền !!!");
+				check = true;
+			}
+		} while (check);
+		return str;
+	}
+
+	public String loaiVang() {
+		String str = "";
+		boolean check = true;
+		do {
+			System.out.println("Chọn loại vàng:" + "\n1.SJC" + "\t2. 9999");
+			switch ((int) checkNumer("lựa chọn")) {
+			case 1:
+				str = "SJC";
+				check = false;
+				break;
+			case 2:
+				str = "9999";
+				check = false;
+				break;
+
+			default:
+				System.out.println("vui lòng chọn đúng loại vàng !!!");
+				check = true;
+			}
+		} while (check);
+		return str;
+	}
+
+	// nhập chuỗi
+	public String checkString(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String str = "";
+		System.out.print("Nhập " + s + ": ");
+		str = sc.nextLine();
+		return str;
+	}
+
+	// kiểm tra kiểu số nhập vào
+	public double checkNumer(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		double n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập " + s + ": ");
+				n = Double.parseDouble(sc.nextLine());
+				check = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Nhập bậy !!!");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+
+}

@@ -1,0 +1,16 @@
+package playerview;
+
+import java.util.List;
+
+import playerbean.Player01;
+import playercontroller.PlayerController01;
+
+public class PlayerView01 {
+
+	public static void main(String[] args) {
+		PlayerController01 controller = new PlayerController01();
+		List<Player01> list = controller.inputData();
+		controller.output(list);
+	}
+
+}

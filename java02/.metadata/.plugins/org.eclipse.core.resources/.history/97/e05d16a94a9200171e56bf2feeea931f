@@ -1,0 +1,17 @@
+package bai02;
+
+public class QuanLyCuaHangCDView {
+
+	public static void main(String[] args) {
+		QuanLyCuaHangCDController controller = new QuanLyCuaHangCDController();
+		QuanLyCuaHangCD[] arrayCD = controller.arrayCD();
+		controller.output(arrayCD);
+
+		QuanLyCuaHangCD[] item = new QuanLyCuaHangCD[5];
+		for (QuanLyCuaHangCD quanLyCuaHangCD : item) {
+			System.out.println(quanLyCuaHangCD);
+		}
+
+	}
+
+}

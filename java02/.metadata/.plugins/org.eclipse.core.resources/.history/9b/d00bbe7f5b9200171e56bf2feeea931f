@@ -1,0 +1,36 @@
+package bai03;
+
+import java.util.Scanner;
+
+public class QuanLyGiaoDichControlller {
+
+	// nhập chuỗi
+	public String checkString(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String str = "";
+		System.out.print("Nhập " + s + ": ");
+		str = sc.nextLine();
+		return str;
+	}
+
+	// kiểm tra kiểu số nhập vào
+	public double checkNumer(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		double n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập " + s + ": ");
+				n = Double.parseDouble(sc.nextLine());
+				check = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Nhập bậy !!!");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+
+}

@@ -1,0 +1,79 @@
+package controller;
+
+import java.util.Scanner;
+
+import bean.SinhVien;
+
+public class SinhVienController {
+
+	public SinhVien inputData() {
+
+		int maSV = (int) inputNumber("student code");
+		String hoTen = inputName();
+		float diemLT = inputNumber("the theoretical point");
+		float diemTH = inputNumber("practice points");
+		SinhVien item = new SinhVien(maSV, hoTen, diemLT, diemTH);
+		return item;
+	}
+
+	public float mediumScore(float diemLT, float diemTB) {
+		return (diemLT + diemTB) / 2;
+	}
+
+	public void output(SinhVien item) {
+		System.out.print(item.toString());
+		System.out.println("\t" + mediumScore(item.getDiemLT(), item.getDiemTH()));
+	}
+
+	public void output02() {
+		System.out.println("Mã Sinh viên " + "\tHọ Tên " + "\t\tĐiểm LT " + "\tĐiểm TH " + "\tĐiểm trung bình: ");
+	}
+
+	public float inputNumber(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		float number = 0;
+		boolean flag = true;
+		do {
+			try {
+				System.out.print("Enter " + s + ": ");
+				number = Float.parseFloat(sc.nextLine());
+				flag = false;
+			} catch (NumberFormatException e) {
+				flag = true;
+				System.out.print("Nonsense !!!");
+			}
+		} while (flag);
+		return number;
+
+	}
+
+	public String inputName() {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String name = "";
+		boolean flag = true;
+		do {
+			try {
+				System.out.print("Enter student name: ");
+				name = sc.nextLine();
+				flag = false;
+				if (!checkName(name)) {
+					throw new Exception();
+				}
+			} catch (Exception e) {
+				flag = true;
+				System.out.println("Nonsense !!!");
+			}
+		} while (flag);
+		return name;
+	}
+
+	public boolean checkName(String name) {
+		if (name.matches(".*[0-9].*")) {
+			return false;
+		}
+		return true;
+	}
+
+}

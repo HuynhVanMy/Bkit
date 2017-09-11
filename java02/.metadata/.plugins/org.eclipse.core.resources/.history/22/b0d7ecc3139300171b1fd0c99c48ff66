@@ -1,0 +1,23 @@
+package bai04;
+
+import java.util.Scanner;
+
+public class DictionaryController {
+
+	public Dictionary inputData() {
+
+		Dictionary item = new Dictionary();
+		return item;
+	}
+
+	// nhập chuỗi
+	public String checkString(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String str = "";
+		System.out.print("Nhập " + s + ": ");
+		str = sc.nextLine();
+		return str;
+	}
+
+}

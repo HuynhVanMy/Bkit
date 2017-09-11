@@ -1,0 +1,70 @@
+package bai05;
+
+import java.util.Scanner;
+
+public class ReadNumber {
+
+	public void readNumber() {
+
+		int n = inputData();
+		int count = ktSoLuong(n);
+
+		int[] A = toArr(n);
+		for (int i = 0; i < A.length; i++) {
+			System.out.println(A[i]);
+		}
+	}
+
+	public int inputData() {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập số: ");
+				n = Integer.parseInt(sc.nextLine());
+				check = checkNumber(n);
+
+			} catch (NumberFormatException e) {
+				System.out.println("không đc nhập bậy !!!");
+				check = true;
+			}
+
+		} while (check);
+
+		return n;
+	}
+
+	// kiểm tra số nhập vào tối đa là 3 chữ số
+	public boolean checkNumber(int n) throws NumberFormatException {
+		if (n < 0 || n > 999) {
+			System.out.println("Từ 0 đến 999 thôi !!!");
+			return true;
+		}
+		return false;
+	}
+
+	// kiểm tra số nhập vào có mấy chữ số
+	public int ktSoLuong(int n) {
+		int count = 0;
+		do {
+			n /= 10;
+			count++;
+		} while (n > 0);
+
+		return count;
+	}
+
+	public int[] toArr(int n) {
+		int[] A = new int[ktSoLuong(n)];
+		int i = 0;
+		do {
+			A[i++] = n % 10;
+			n /= 10;
+		} while (n > 0);
+
+		return A;
+	}
+
+}

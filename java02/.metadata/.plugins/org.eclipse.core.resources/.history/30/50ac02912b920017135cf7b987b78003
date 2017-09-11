@@ -1,0 +1,35 @@
+package playercontroller;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import playerbean.Player01;
+
+public class PlayerController01 {
+
+	public List<Player01> inputData() {
+		List<Player01> list = new ArrayList<>();
+		int n = checkNumber();
+		Player01 item = new Player01();
+		list.add(item);
+		return list;
+	}
+
+	private int checkNumber() {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int n = 0;
+		boolean check = true;
+		try {
+			System.out.print("Nhập số lượng cầu thủ: ");
+			n = Integer.parseInt(sc.nextLine());
+			check = false;
+		} catch (NumberFormatException e) {
+			System.out.println("Nhập bậy !!!");
+			check = true;
+		}
+		return n;
+	}
+
+}

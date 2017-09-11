@@ -1,0 +1,49 @@
+package bai02;
+
+public class QuanLyCuaHangCDView {
+
+	public static void main(String[] args) {
+		QuanLyCuaHangCDController controller = new QuanLyCuaHangCDController();
+		int n = (int) controller.checkNumer("số lượng CD tối đa");
+		QuanLyCuaHangCD[] arrayCD = new QuanLyCuaHangCD[n];
+		int soLuong = controller.laySoLuongCD(arrayCD);
+		boolean check = true;
+		do {
+			switch (controller.menu()) {
+			case 1:
+				arrayCD = controller.arrayCD(n);
+				break;
+			case 2:
+				arrayCD = controller.addCD(arrayCD, soLuong);
+				break;
+			case 3:
+				System.out.println("Số lượng CD có trong danh sách: " + soLuong);
+				break;
+			case 4:
+				double tongTien = controller.tongGiaThanh(arrayCD, soLuong);
+				System.out.println("Tổng giá thành: " + tongTien);
+				break;
+			case 5:
+				System.out.println("chưa làm");
+				break;
+			case 6:
+				System.out.println("chưa làm");
+				break;
+			case 7:
+				controller.output(arrayCD, soLuong);
+				break;
+			case 8:
+				check = false;
+				break;
+
+			default:
+				System.out.println("Không có chức năng này !!!");
+				check = true;
+				break;
+			}
+			soLuong = controller.laySoLuongCD(arrayCD);
+		} while (check);
+		System.out.println("------------bye------------");
+	}
+
+}

@@ -1,0 +1,191 @@
+package bai03;
+
+import java.util.Calendar;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Controlller {
+
+	public StudentAccount inputData() {
+		Random rd = new Random();
+		String maHV = "bkit-" + (rd.nextInt(899) + 100);
+		String hoTen = name("tên học viên");
+		String matKhau = pass("mật khẩu");
+		String ngaySinh = date();
+
+		StudentAccount item = new StudentAccount(maHV, hoTen, matKhau, ngaySinh);
+
+		return item;
+	}
+
+	public void output(StudentAccount item) {
+		System.out.println("Chúc mừng bạn đã đăng kí thành công !!! :))");
+		System.out.println(item.toString());
+	}
+
+	// bắt lỗi nhập tên
+	public String name(String s) {
+		String hoTen = "";
+		boolean check = true;
+		do {
+			hoTen = inputS("họ tên");
+			if (checkName(hoTen)) {
+				check = false;
+			} else {
+				check = true;
+			}
+		} while (check);
+		return hoTen;
+	}
+
+	// bắt lỗi nhập mật khẩu
+	public String pass(String s) {
+		String matKhau = "";
+		boolean check = true;
+		do {
+			matKhau = inputS("mật khẩu");
+			if (checkPass(matKhau)) {
+				check = false;
+			}
+
+		} while (check);
+		return matKhau;
+	}
+
+	// bắt lỗi nhập ngày tháng năm
+	public String date() {
+		String date = "";
+		int ngay;
+		int thang;
+		int nam;
+		boolean checkYear = true;
+		do {
+			nam = inputI("năm");
+			checkYear = false;
+			int tuoi = Calendar.getInstance().get(Calendar.YEAR) - nam;
+			if (tuoi < 19) {
+				checkYear = true;
+			}
+
+		} while (checkYear);
+		boolean checkMonth = true; // kiểm tra tháng
+		do {
+			thang = inputI("tháng");
+			if (thang > 12) {
+				System.out.println("không đc nhập bậy !!!");
+				checkMonth = true;
+			} else {
+				checkMonth = false;
+			}
+		} while (checkMonth);
+
+		boolean checkDate = true; // kiểm tra ngày
+		do {
+			ngay = inputI("ngày");
+			checkDate = false;
+			if (thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10 || thang == 12) {
+				if (ngay <= 31) {
+					checkDate = false;
+				} else {
+					checkDate = true;
+				}
+			} else if (thang == 4 || thang == 6 || thang == 9 || thang == 11) {
+				if (ngay <= 30) {
+					checkDate = false;
+				} else {
+					checkDate = true;
+				}
+			}
+			if ((nam % 4 == 0 && nam % 100 != 0) || nam % 400 == 0) {
+				if (thang == 2) {
+					if (ngay <= 29) {
+						checkDate = false;
+					} else {
+						checkDate = true;
+					}
+				}
+			} else {
+				if (thang == 2) {
+					if (ngay <= 28) {
+						checkDate = false;
+					} else {
+						checkDate = true;
+					}
+				}
+			}
+		} while (checkDate);
+
+		date = ngay + " / " + thang + " / " + nam;
+
+		return date;
+	}
+
+	// hàm nhập kiểu String
+	public String inputS(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String temp = "";
+		System.out.print("Nhập " + s + ": ");
+		temp = sc.nextLine();
+		return temp;
+	}
+
+	public int menu() {
+		int n = 0;
+
+		System.out.println("====MENU====" + "\n1. Đăng kí tài khoản" + "\n2. Thoát");
+		boolean check = true;
+		do {
+			n = inputI("lựa chọn của bạn");
+			check = false;
+			if (n < 1 || n > 2) {
+				System.out.println("Không có chức năng này !!!");
+				check = true;
+			}
+		} while (check);
+
+		return n;
+	}
+
+	// Nhập kiểu int
+	public int inputI(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập " + s + ": ");
+				n = Integer.parseInt(sc.nextLine());
+				check = false;
+				if (n < 1) {
+					System.out.println("Nhập sai định dạng rồi !!!");
+					check = true;
+				}
+			} catch (NumberFormatException e) {
+				System.out.println("Không đc nhập bậy !!!");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+
+	// kiểm tra nhập họ tên
+	public boolean checkName(String s) {
+		if (s.matches(".*[0-9].*") || s.contains("!") || s.contains("@") || s.contains("#") || s.contains("$")
+				|| s.contains("%") || s.contains("^") || s.contains("&") || s.contains("*")) {
+			return false;
+		}
+		return true;
+	}
+
+	// kiểm tra nhập mật khẩu
+	public boolean checkPass(String s) {
+		if (!s.matches(".*((?=.*[A-Z])(?=.*[@#$%!]).{8,63}).*")) {
+			return false;
+		}
+		return true;
+
+	}
+
+}

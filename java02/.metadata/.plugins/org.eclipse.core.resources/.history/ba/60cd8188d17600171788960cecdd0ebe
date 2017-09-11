@@ -1,0 +1,16 @@
+package bai03;
+
+public class Exc extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public void ageException(int tuoi) {
+		if (tuoi < 19) {
+			System.out.println("tuổi nhỏ nhất là 19 !!!");
+		}
+	}
+
+}

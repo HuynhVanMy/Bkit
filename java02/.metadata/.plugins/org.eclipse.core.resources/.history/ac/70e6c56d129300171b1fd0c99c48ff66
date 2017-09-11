@@ -1,0 +1,12 @@
+package bai04;
+
+import java.util.TreeMap;
+
+public class DictionaryView {
+
+	public static void main(String[] args) {
+		TreeMap<String, Dictionary> dictionary = new TreeMap<>();
+		dictionary.put("hello", new Dictionary("xin chào", "tính từ", ":))"));
+	}
+
+}

@@ -1,0 +1,21 @@
+package view;
+
+import bean.SinhVien;
+import controller.SinhVienController;
+
+public class ShowData {
+
+	public static void main(String[] args) {
+		SinhVien[] item = new SinhVien[3];
+		SinhVienController ctrl = new SinhVienController();
+		for (int i = 0; i < item.length; i++) {
+			item[i] = ctrl.inputData();
+		}
+		ctrl.output02();
+		for (int i = 0; i < item.length; i++) {
+			ctrl.output(item[i]);
+		}
+
+	}
+
+}

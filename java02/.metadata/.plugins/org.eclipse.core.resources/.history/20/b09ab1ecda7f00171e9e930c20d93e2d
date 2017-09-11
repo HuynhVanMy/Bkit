@@ -1,0 +1,38 @@
+package bai08;
+
+import java.util.Scanner;
+
+public class Controller {
+
+	public Hotel inputData() {
+
+		String maHoaDon = input("mã hóa đơn");
+		String tenKhachHang = input("tên khách hàng");
+		String soChungMinh = input("số chứng minh");
+		String gioiTinh = input("giới tính");
+		String soPhong = input("số phòng");
+		String loaiPhong = loaiPhong(soPhong);
+		String ngayDen = input("ngày đến");
+		String ngayDi = input("ngày đi");
+		String tienPhong;
+
+		Hotel item = new Hotel(maHoaDon, tenKhachHang, soChungMinh, gioiTinh, soPhong, loaiPhong, ngayDen, ngayDi,
+				tienPhong);
+		return item;
+
+	}
+
+	public String input(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String temp = "";
+		System.out.print("Nhập " + s + ": ");
+		temp = sc.nextLine();
+		return temp;
+	}
+
+	public String loaiPhong(String soPhong) {
+		return String.valueOf(soPhong.charAt(0));
+	}
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;bai03.Bai3Update&apos; to &apos;Bai03Update&apos;&#x0D;&#x0A;- Original project: &apos;JAVACORED7_BAITAP&apos;&#x0D;&#x0A;- Original element: &apos;bai03.Bai3Update&apos;&#x0D;&#x0A;- Renamed element: &apos;bai03.Bai03Update&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Bai3Update&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;bai03{Bai3Update.java[Bai3Update" matchStrategy="1" name="Bai03Update" qualified="false" references="true" similarDeclarations="false" stamp="1503074248389" textual="false" version="1.0"/>
+</session>

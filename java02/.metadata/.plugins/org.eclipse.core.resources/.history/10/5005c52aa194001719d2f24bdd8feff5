@@ -1,0 +1,46 @@
+package bai04;
+
+import java.util.Scanner;
+
+public class TienDienController {
+
+	public TienDien inputData() {
+
+		String diaChi = inputStr("địa chỉ chủ hộ");
+		String tenChuHo = inputStr("tên chủ hộ");
+		int soDienTieuThu = inputInt("số điện tiêu thụ");
+		double tongTien = 0;
+		double thue = 0.1;
+		tongTien += thue;
+
+		TienDien item = new TienDien(diaChi, tenChuHo, soDienTieuThu, thue, tongTien);
+		return item;
+	}
+
+	public String inputStr(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String str = "";
+		System.out.print("Nhập " + s + ": ");
+		str = sc.nextLine();
+		return str;
+	}
+
+	public static int inputInt(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập " + s + ": ");
+				n = Integer.parseInt(sc.nextLine());
+				check = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Nhập bậy");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+}

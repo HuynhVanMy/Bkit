@@ -1,0 +1,35 @@
+package bai04;
+
+import java.util.TreeMap;
+
+public class DictionaryView {
+
+	public static void main(String[] args) {
+		DictionaryController controller = new DictionaryController();
+		TreeMap<String, Dictionary> dictionary = controller.addDictionary();
+		controller.output(dictionary);
+		boolean check = true;
+		do {
+			switch (controller.menu()) {
+			case 1:
+
+				break;
+			case 2:
+
+				break;
+			case 3:
+
+				break;
+			case 4:
+
+				break;
+
+			default:
+				System.out.println("không có chức năng này !!!");
+				check = true;
+				break;
+			}
+		} while (check);
+	}
+
+}

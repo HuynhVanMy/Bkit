@@ -1,0 +1,41 @@
+package bai04;
+
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class DictionaryController {
+
+	public void output(TreeMap<String, Dictionary> dictionary) {
+		Set<String> listDictionary = dictionary.keySet();
+		for (String string : listDictionary) {
+			System.out.println(string + dictionary.get(string));
+		}
+	}
+
+	public TreeMap<String, Dictionary> addDictionary() {
+		TreeMap<String, Dictionary> dictionary = new TreeMap<>();
+		String str = checkString("từ cần thêm");
+		dictionary.put(str, inputData());
+		return dictionary;
+	}
+
+	public Dictionary inputData() {
+		String nghia = checkString("nghĩa");
+		String loaiTu = checkString("loại từ");
+		String ghiChu = checkString("ghi chú");
+		Dictionary item = new Dictionary(nghia, loaiTu, ghiChu);
+		return item;
+	}
+
+	// nhập chuỗi
+	public String checkString(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String str = "";
+		System.out.print("Nhập " + s + ": ");
+		str = sc.nextLine();
+		return str;
+	}
+
+}

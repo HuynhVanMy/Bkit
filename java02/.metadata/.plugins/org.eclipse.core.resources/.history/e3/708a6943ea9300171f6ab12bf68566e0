@@ -1,0 +1,38 @@
+package bai05;
+
+public class People {
+
+	private int name;
+
+	public People() {
+		this.name = (int) (Math.random() * 4);
+	}
+
+	public String toString02() {
+		String result = "";
+		switch (name) {
+		case 0:
+			result = "bích ";
+			break;
+		case 1:
+			result = "chuồn";
+			break;
+		case 2:
+			result = "Rô   ";
+			break;
+		case 3:
+			result = "Cơ   ";
+			break;
+		}
+		return result;
+	}
+
+	public int getName() {
+		return name;
+	}
+
+	public void setName(int name) {
+		this.name = name;
+	}
+
+}

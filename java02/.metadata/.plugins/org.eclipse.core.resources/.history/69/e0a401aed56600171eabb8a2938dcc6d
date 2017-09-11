@@ -1,0 +1,30 @@
+package bean;
+
+public class Rectangle {// class chính - có public
+	private int with;
+	private int height;
+
+	public Rectangle(){
+		System.out.println("I'm here !!!");
+	}
+	
+	public int getWith() {
+		return with;
+	}
+
+	public void setWith(int with) {
+		this.with = with;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+}
+/*
+ * Mỗi chương trình chỉ có 1 class chính và chỉ có class chính có public
+ */

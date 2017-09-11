@@ -1,0 +1,29 @@
+package bai05;
+
+public class Card {
+
+	private int face;
+	private int number;
+
+	public Card() {
+		this.face = (int) (Math.random() * 4);
+		this.number = (int) (Math.random() * 13);
+	}
+
+	public int getFace() {
+		return face;
+	}
+
+	public void setFace(int face) {
+		this.face = face;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+}

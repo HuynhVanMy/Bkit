@@ -1,0 +1,42 @@
+package bai04;
+
+public class Dictionary {
+
+	private String nghia;
+	private String loaiTu;
+	private String ghiChu;
+
+	public Dictionary() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Nghĩa: " + nghia + "\t\t Loại từ: " + loaiTu + "\t\t Ghi chú: " + ghiChu;
+	}
+
+	public String getNghia() {
+		return nghia;
+	}
+
+	public void setNghia(String nghia) {
+		this.nghia = nghia;
+	}
+
+	public String getLoaiTu() {
+		return loaiTu;
+	}
+
+	public void setLoaiTu(String loaiTu) {
+		this.loaiTu = loaiTu;
+	}
+
+	public String getGhiChu() {
+		return ghiChu;
+	}
+
+	public void setGhiChu(String ghiChu) {
+		this.ghiChu = ghiChu;
+	}
+
+}

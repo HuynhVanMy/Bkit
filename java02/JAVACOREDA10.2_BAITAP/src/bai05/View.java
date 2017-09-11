@@ -1,0 +1,22 @@
+package bai05;
+
+import java.util.List;
+
+public class View {
+
+	public static void main(String[] args) {
+		XaoBai bai = new XaoBai();
+		List<Card> alItem = bai.card();
+		bai.output(alItem);
+		System.out.println("\n\nBÀI SAU KHI XÁO\n");
+		bai.xaoBai(alItem);
+		bai.output(alItem);
+		// System.out.println();
+		// System.out.println("---------");
+		// System.out.println();
+		//List<People> peopleList = bai.chiaBai(alItem);
+		// bai.output02(peopleList);
+
+	}
+
+}

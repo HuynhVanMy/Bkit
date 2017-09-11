@@ -1,0 +1,11 @@
+package bai04;
+
+public class DictionaryController {
+
+	public Dictionary inputData() {
+
+		Dictionary item = new Dictionary();
+		return item;
+	}
+
+}

@@ -1,0 +1,14 @@
+package bai04;
+
+import java.util.List;
+
+public class TienDienView {
+
+	public static void main(String[] args) {
+		TienDienController controller = new TienDienController();
+		List<TienDien> listTienDien = controller.listTienDien();
+		controller.output(listTienDien);
+
+	}
+
+}

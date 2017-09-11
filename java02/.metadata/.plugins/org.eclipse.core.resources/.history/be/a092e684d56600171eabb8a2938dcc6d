@@ -1,0 +1,10 @@
+package bean;
+
+public class Main {
+	public static void main(String[] args) {
+		Rectangle item = new Rectangle();
+		
+		System.out.println(item.getWith());
+		System.out.println(item.getHeight());
+	}
+}

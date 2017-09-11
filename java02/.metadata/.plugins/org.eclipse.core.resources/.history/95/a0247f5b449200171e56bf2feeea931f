@@ -1,0 +1,73 @@
+package bai02;
+
+import java.text.DecimalFormat;
+
+public class QuanLyCuaHangCD {
+
+	private int maCD;
+	private String chuDeCD;
+	private String tenCaSy;
+	private int soBaiHat;
+	private double giaThanh;
+
+	public QuanLyCuaHangCD() {
+
+	}
+
+	public QuanLyCuaHangCD(int maCD, String chuDeCD, String tenCaSy, int soBaiHat, double giaThanh) {
+		super();
+		this.maCD = maCD;
+		this.chuDeCD = chuDeCD;
+		this.tenCaSy = tenCaSy;
+		this.soBaiHat = soBaiHat;
+		this.giaThanh = giaThanh;
+	}
+
+	@Override
+	public String toString() {
+		DecimalFormat decimalFormat = new DecimalFormat("#,###.000");
+		return "Mã CD: " + maCD + "\tChủ đề; " + chuDeCD + "\t Tên ca sỹ: " + tenCaSy + "\t Số bài hát: " + soBaiHat
+				+ "\t Giá thành: " + decimalFormat.format(giaThanh) + " VNĐ";
+	}
+
+	public int getMaCD() {
+		return maCD;
+	}
+
+	public void setMaCD(int maCD) {
+		this.maCD = maCD;
+	}
+
+	public String getChuDeCD() {
+		return chuDeCD;
+	}
+
+	public void setChuDeCD(String chuDeCD) {
+		this.chuDeCD = chuDeCD;
+	}
+
+	public String gettenCaSy() {
+		return tenCaSy;
+	}
+
+	public void settenCaSy(String tenCaSy) {
+		this.tenCaSy = tenCaSy;
+	}
+
+	public int getSoBaiHat() {
+		return soBaiHat;
+	}
+
+	public void setSoBaiHat(int soBaiHat) {
+		this.soBaiHat = soBaiHat;
+	}
+
+	public double getGiaThanh() {
+		return giaThanh;
+	}
+
+	public void setGiaThanh(double giaThanh) {
+		this.giaThanh = giaThanh;
+	}
+
+}

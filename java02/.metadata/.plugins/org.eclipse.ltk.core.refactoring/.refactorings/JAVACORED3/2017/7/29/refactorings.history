@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;rework.ReStudent.diemTB&apos; in &apos;rework.ReStudent&apos;&#x0D;&#x0A;- Original project: &apos;JAVACORED3&apos;&#x0D;&#x0A;- Original element: &apos;rework.ReStudent.diemTB&apos;&#x0D;&#x0A;- Getter method name: &apos;getDiemTB&apos;&#x0D;&#x0A;- Setter method name: &apos;setDiemTB&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;diemTB&apos;" flags="589830" getter="getDiemTB" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;rework{ReStudent.java[ReStudent^diemTB" insertion="12" setter="setDiemTB" stamp="1500185605247" version="1.0" visibility="1"/>
+</session>

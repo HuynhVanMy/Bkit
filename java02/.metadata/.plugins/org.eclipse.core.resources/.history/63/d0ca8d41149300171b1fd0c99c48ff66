@@ -1,0 +1,25 @@
+package bai04;
+
+import java.util.Scanner;
+
+public class DictionaryController {
+
+	public Dictionary inputData() {
+		String nghia = checkString("nghĩa");
+		String loaiTu = checkString("loại từ");
+		String ghiChu = checkString("ghi chú");
+		Dictionary item = new Dictionary(nghia, loaiTu, ghiChu);
+		return item;
+	}
+
+	// nhập chuỗi
+	public String checkString(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String str = "";
+		System.out.print("Nhập " + s + ": ");
+		str = sc.nextLine();
+		return str;
+	}
+
+}

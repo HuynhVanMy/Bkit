@@ -1,0 +1,52 @@
+package bai01;
+
+import java.util.Scanner;
+
+public class SoNguyenToNhoNhat {
+
+	public static void main(String[] args) {
+
+		int n = input();
+		int count = n;
+		while (count >= n) {
+			if (checkSoNgTo(count)) {
+				System.out.println("Số nguyên tố nhỏ nhất là " + count);
+				break;
+			}
+			count++;
+		}
+
+	}
+
+	public static boolean checkSoNgTo(int n) {
+		if (n == 2 || n == 3) {
+			return true;
+		} else {
+			for (int i = 2; i < n; i++) {
+				if (n % i == 0) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	public static int input() {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập số n: ");
+				n = Integer.parseInt(sc.nextLine());
+				check = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Nhập bậy");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+
+}

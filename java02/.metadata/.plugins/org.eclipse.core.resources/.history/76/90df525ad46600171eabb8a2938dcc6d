@@ -1,0 +1,6 @@
+package bean;
+
+public class Rectangle {// class chính - có public
+	private int with;
+	private int height;
+}

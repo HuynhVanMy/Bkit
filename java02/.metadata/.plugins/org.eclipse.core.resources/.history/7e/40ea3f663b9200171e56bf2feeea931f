@@ -1,0 +1,78 @@
+package playercontroller;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
+
+import playerbean.Player01;
+
+public class PlayerController01 {
+
+	public List<Player01> sortByFullName(List<Player01> list) {
+		Collections.sort(list, new Comparator<Player01>() {
+
+			@Override
+			public int compare(Player01 fullName01, Player01 fullName02) {
+				return fullName01.getFullName().compareToIgnoreCase(fullName02.getFullName());
+			}
+		});
+
+		return list;
+	}
+
+	public List<Player01> sortByNumber(List<Player01> list) {
+		Collections.sort(list, new Comparator<Player01>() {
+
+			@Override
+			public int compare(Player01 numberOne, Player01 number02) {
+				return numberOne.getNumber() - number02.getNumber();
+			}
+		});
+		return list;
+	}
+
+	public void output(List<Player01> list) {
+		for (Player01 player01 : list) {
+			System.out.println(player01.toString());
+		}
+	}
+
+	public List<Player01> inputData() {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		List<Player01> list = new ArrayList<>();
+		int n = (int) checkNumber("số lượng cầu thủ");
+		for (int i = 0; i < n; i++) {
+			System.out.println("Nhập thông tin cầu thủ thứ " + (i + 1) + ":");
+			int number = (int) checkNumber("số áo cầu thủ");
+			System.out.print("Nhập họ tên: ");
+			String fullName = sc.nextLine();
+			double salary = checkNumber("lương cầu thủ");
+			Player01 item = new Player01(number, fullName, salary);
+			list.add(item);
+			System.out.println();
+		}
+		return list;
+	}
+
+	private double checkNumber(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		double n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập " + s + ": ");
+				n = Double.parseDouble(sc.nextLine());
+				check = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Nhập bậy !!!");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+
+}

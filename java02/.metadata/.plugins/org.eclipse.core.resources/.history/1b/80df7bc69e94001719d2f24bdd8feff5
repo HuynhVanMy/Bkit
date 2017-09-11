@@ -1,0 +1,35 @@
+package bai04;
+
+import java.util.Scanner;
+
+public class TienDienController {
+
+	public TienDien inputData(){
+		
+		TienDien item = new TienDien();
+		return item;
+	}
+	
+	public String inputStr(String s){
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+	}
+	
+	public static int inputInt(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập " + s + ": ");
+				n = Integer.parseInt(sc.nextLine());
+				check = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Nhập bậy");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+}

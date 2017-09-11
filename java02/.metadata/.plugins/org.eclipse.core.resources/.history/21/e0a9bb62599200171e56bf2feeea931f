@@ -1,0 +1,35 @@
+package bai03;
+
+public class QuanLyGiaoDich {
+
+	private String maGiaoDich;
+	private String ngayGiaoDich;
+	private double donGia;
+	private int soluong;
+	private String loaiVang;
+	private double tiGia;
+	private String loaiTienTe;
+
+	public QuanLyGiaoDich() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public QuanLyGiaoDich(String maGiaoDich, String ngayGiaoDich, double donGia, int soluong, String loaiVang) {
+		this.maGiaoDich = maGiaoDich;
+		this.ngayGiaoDich = ngayGiaoDich;
+		this.donGia = donGia;
+		this.soluong = soluong;
+		this.loaiVang = loaiVang;
+	}
+
+	public QuanLyGiaoDich(String maGiaoDich, String ngayGiaoDich, double donGia, int soluong, double tiGia,
+			String loaiTienTe) {
+		this.maGiaoDich = maGiaoDich;
+		this.ngayGiaoDich = ngayGiaoDich;
+		this.donGia = donGia;
+		this.soluong = soluong;
+		this.tiGia = tiGia;
+		this.loaiTienTe = loaiTienTe;
+	}
+
+}

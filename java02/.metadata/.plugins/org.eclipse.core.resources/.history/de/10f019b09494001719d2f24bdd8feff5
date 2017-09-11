@@ -1,0 +1,31 @@
+package bai01;
+
+import java.util.Scanner;
+
+public class SoNguyenToNhoNhat {
+
+	public static void main(String[] args) {
+
+		int n = input();
+
+	}
+
+	private static int input() {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập số n: ");
+				n = Integer.parseInt(sc.nextLine());
+				check = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Nhập bậy");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+
+}

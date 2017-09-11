@@ -1,0 +1,37 @@
+package bai05;
+
+public class Pascal {
+
+	public static void main(String[] args) {
+
+		Pascal item = new Pascal();
+		//item.pasCal(4);
+		
+	}
+	
+	public void pasCal(int n){
+		int[] A = new int[n + 2];
+		int[] B = new int[n + 2];
+		A[0] = 1;
+		A[1] = 1;
+		for (int i = 1; i <= n + 1; i++) {
+			//truyền giá trị của mảng A cho mảng B để khi in ra và nạp vào k bị đè giá trị
+			for (int k = 0; k <= i; k++) {
+				B[k] = A[k];
+			}
+
+			for (int j = 0; j <= i; j++) {
+				//in ra theo điều kiện rồi lưu giá trị vừa in vào mảng A
+				if (j == 0 || j == i) {
+					System.out.print(1 + " ");
+					A[j] = 1;
+				} else {
+					System.out.print((B[j - 1] + B[j]) + " ");
+					A[j] = B[j - 1] + B[j];
+				}
+			}
+			System.out.println();
+		}
+	}
+
+}

@@ -1,0 +1,44 @@
+package testhashset_treeSet;
+
+import java.util.HashSet;
+import java.util.TreeSet;
+
+public class View {
+
+	public static void main(String[] args) {
+
+		HashSet<String> hashSet = new HashSet<>();
+		hashSet.add("mỹ");
+		hashSet.add("lập");
+		hashSet.add("chiến");
+		hashSet.add("nguyên");
+		hashSet.add("linh");
+
+		TreeSet<String> treeSet = new TreeSet<>();
+		treeSet.add("mỹ");
+		treeSet.add("lập");
+		treeSet.add("chiến");
+		treeSet.add("nguyên");
+		treeSet.add("linh");
+
+		outputHash(hashSet);
+		System.out.println();
+		outputTree(treeSet);
+
+	}
+
+	public static void outputHash(HashSet<String> hashSet) {
+		System.out.println("HashSet------");
+		for (String str : hashSet) {
+			System.out.println(str);
+		}
+	}
+
+	public static void outputTree(TreeSet<String> treeSet) {
+		System.out.println("TreeSet-------");
+		for (String str : treeSet) {
+			System.out.print(str);
+		}
+	}
+
+}

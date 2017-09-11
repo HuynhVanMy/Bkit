@@ -1,0 +1,51 @@
+package playercontroller;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import playerbean.Player01;
+
+public class PlayerController01 {
+
+	public void output(List<Player01> list) {
+		for (Player01 player01 : list) {
+			System.out.println(player01.toString());
+		}
+	}
+
+	public List<Player01> inputData() {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		List<Player01> list = new ArrayList<>();
+		int n = (int) checkNumber("số lượng cầu thủ");
+		for (int i = 0; i < n; i++) {
+			int number = (int) checkNumber("số áo cầu thủ");
+			System.out.print("Nhập họ tên: ");
+			String fullName = sc.nextLine();
+			double salary = checkNumber("lương cầu thủ");
+			Player01 item = new Player01(number, fullName, salary);
+			list.add(item);
+		}
+		return list;
+	}
+
+	private double checkNumber(String s) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		double n = 0;
+		boolean check = true;
+		do {
+			try {
+				System.out.print("Nhập " + s + ": ");
+				n = Double.parseDouble(sc.nextLine());
+				check = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Nhập bậy !!!");
+				check = true;
+			}
+		} while (check);
+		return n;
+	}
+
+}

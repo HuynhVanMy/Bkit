@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;bai02.Dáno&apos; to &apos;DanSo&apos;&#x0D;&#x0A;- Original project: &apos;JAVACOREDA11_KIEMTRA&apos;&#x0D;&#x0A;- Original element: &apos;bai02.Dáno&apos;&#x0D;&#x0A;- Renamed element: &apos;bai02.DanSo&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Dáno&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;bai02{Dáno.java[Dáno" matchStrategy="1" name="DanSo" qualified="false" references="true" similarDeclarations="false" stamp="1504875698493" textual="false" version="1.0"/>
+</session>

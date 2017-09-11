@@ -1,0 +1,16 @@
+package bai02;
+
+public class DanSo {
+
+	public static void main(String[] args) {
+
+		double soDan = danSo(5);
+		System.out.println(soDan);
+
+	}
+
+	public static double danSo(int soDan) {
+		return danSo(soDan) * (danSo(soDan -1 ));
+	}
+
+}

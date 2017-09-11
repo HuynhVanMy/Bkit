@@ -1,0 +1,13 @@
+package bai03;
+
+import java.util.List;
+
+public class QuanLyGiaoDichView {
+
+	public static void main(String[] args) {
+		QuanLyGiaoDichControlller controlller = new QuanLyGiaoDichControlller();
+		List<QuanLyGiaoDich> list = controlller.listGiaoDich();
+		controlller.output(list);
+	}
+
+}

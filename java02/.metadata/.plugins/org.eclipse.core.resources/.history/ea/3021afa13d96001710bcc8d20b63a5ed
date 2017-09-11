@@ -1,0 +1,38 @@
+package testhashset_treeSet;
+
+import java.util.HashSet;
+import java.util.TreeSet;
+
+public class View {
+	
+	public static void main(String[] args) {
+		
+		HashSet<Integer> hashSet = new HashSet<>();
+		hashSet.add(1);
+		hashSet.add(9);
+		hashSet.add(4);
+		hashSet.add(6);
+		
+		TreeSet<Integer> treeSet = new TreeSet<>();
+		treeSet.add(1);
+		treeSet.add(9);
+		treeSet.add(4);
+		treeSet.add(6);
+		
+		
+	}
+	
+	public static void outputHash(HashSet<Integer> hashSet){
+		System.out.println("HashSet------");
+		for (Integer integer : hashSet) {
+			System.out.print(integer + "  ");
+		}
+	}
+
+	public static void outputTree(TreeSet<Integer> treeSet){
+		for (Integer integer : treeSet) {
+			System.out.print(integer + "  ");
+		}
+	}
+
+}

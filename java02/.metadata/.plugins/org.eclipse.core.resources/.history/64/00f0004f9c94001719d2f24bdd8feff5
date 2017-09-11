@@ -1,0 +1,15 @@
+package bai03;
+
+public class TinhThoiGianController {
+	
+	public TinhThoiGian tinh(TinhThoiGian timeOne, TinhThoiGian timeTwo){
+		TinhThoiGian time = new TinhThoiGian();
+		if(timeOne.getGiay() >= timeTwo.getGiay()){
+			time.setGiay(timeOne.getGiay() - timeTwo.getGiay());
+		}else if(timeOne.getGiay() < timeTwo.getGiay()){
+			time.setGiay(timeOne.getGiay() + 60 - timeTwo.getGiay());
+		}
+		return time;
+	}
+
+}

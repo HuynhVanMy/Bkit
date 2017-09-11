@@ -1,0 +1,31 @@
+package bai05;
+
+import java.util.Random;
+
+public class Card {
+
+	private int face;
+	private String number;
+
+	public Card() {
+		this.face = (int) (Math.random() * 4);
+	}
+
+	public int getFace() {
+		return face;
+	}
+
+	public void setFace(int face) {
+		this.face = face;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
+	
+}

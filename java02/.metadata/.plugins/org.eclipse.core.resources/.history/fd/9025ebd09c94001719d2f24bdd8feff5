@@ -1,0 +1,25 @@
+package bai03;
+
+public class TinhThoiGianController {
+	
+	
+
+	public TinhThoiGian tinh(TinhThoiGian timeOne, TinhThoiGian timeTwo) {
+		TinhThoiGian time = new TinhThoiGian();
+		if (timeOne.getGiay() >= timeTwo.getGiay()) {
+			time.setGiay(timeOne.getGiay() - timeTwo.getGiay());
+		} else if (timeOne.getGiay() < timeTwo.getGiay()) {
+			time.setGiay(timeOne.getGiay() + 60 - timeTwo.getGiay());
+			timeOne.setPhut(timeOne.getPhut() - 1);
+		}
+		if (timeOne.getPhut() >= timeTwo.getPhut()) {
+			time.setPhut(timeOne.getPhut() - timeTwo.getPhut());
+		} else if (timeOne.getPhut() < timeTwo.getPhut()) {
+			time.setPhut(timeOne.getPhut() + 60 - timeTwo.getPhut());
+			timeOne.setGio(timeOne.getGio() - 1);
+		}
+		time.setGio(timeOne.getGio() - timeOne.getGio());
+		return time;
+	}
+
+}

@@ -1,0 +1,25 @@
+package nomvc;
+
+public class Bai01 {
+	public static void main(String[] args) {
+		Bai01 item = new Bai01();
+		item.hinh01();
+		
+	}
+	
+	public void hinh01(){
+		int n = 8;
+		for (int i = 0; i <= n; i++) {
+			for (int j = 0; j <= n; j++) {
+				if (i == 0 || i == n) {
+					System.out.print("* ");
+				} else if (j == i || j == n - i || j == 0 || j == n) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+	}
+}

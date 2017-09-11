@@ -1,0 +1,9 @@
+package bean;
+
+public class Rectangle {// class chính - có public
+	private int with;
+	private int height;
+}
+/*
+	Mỗi chương trình chỉ có 1 class chính và chỉ có class chính có public
+*/

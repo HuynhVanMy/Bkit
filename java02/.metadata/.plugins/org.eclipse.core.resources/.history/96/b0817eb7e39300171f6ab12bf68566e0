@@ -1,0 +1,34 @@
+package bai05;
+
+public class Card {
+
+	private String loaiBai;
+	private String soThuTu;
+
+	public Card() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Card(String loaiBai, String soThuTu) {
+		super();
+		this.loaiBai = loaiBai;
+		this.soThuTu = soThuTu;
+	}
+
+	public String getLoaiBai() {
+		return loaiBai;
+	}
+
+	public void setLoaiBai(String loaiBai) {
+		this.loaiBai = loaiBai;
+	}
+
+	public String getSoThuTu() {
+		return soThuTu;
+	}
+
+	public void setSoThuTu(String soThuTu) {
+		this.soThuTu = soThuTu;
+	}
+
+}

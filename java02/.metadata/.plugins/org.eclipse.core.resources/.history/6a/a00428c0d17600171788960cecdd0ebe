@@ -1,0 +1,14 @@
+package bai03;
+
+public class Exc extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public void ageException(String s) {
+		System.out.println(s);
+	}
+
+}
